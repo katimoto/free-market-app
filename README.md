@@ -22,17 +22,18 @@
 
 ## items テーブル
 
-| Column     | Type     | Options                        |
-| --------   | ------   | ------------------------------ |
-| name       | string   | null: false                    |
-| category   | integer  | null: false                    |
-| price      | integer  | null: false                    |
-| status    | integer  | null: false                    |
-| address    | integer  | null: false                    |
-| shipment   | integer  | null: false                    |
-| text       | text     | null: false                    |
-| fee        | integer  | null: false                    |
-| user_id    | integer  | null: false, foreign_key: true |
+| Column       | Type     | Options                        |
+| --------     | ------   | ------------------------------ |
+| name         | string   | null: false                    |
+| price        | integer  | null: false                    |
+| category_id  | integer  | null: false                    |
+| deliv_fee_id | integer  | null: false                    |
+| status_id    | integer  | null: false                    |
+| address_id   | integer  | null: false                    |
+| shipment_id  | integer  | null: false                    |
+| text         | text     | null: false                    |
+| fee          | integer  | null: false                    |
+| user_id      | integer  | null: false, foreign_key: true |
 
 ### Association
 
@@ -54,15 +55,15 @@
 
 ## addresses テーブル
 
-| Column      | Type       | Options                        |
-| -------     | ---------- | ------------------------------ |
-| zip         | string     | null: false                    |
-| prefecture  | integer    | null: false                    |
-| city        | string     | null: false                    |
-| address     | string     | null: false                    |
-| buildname   | string     |                                |
-| phonecall   | string     | null: false                    |
-| purchase_id | integer    | null: false, foreign_key: true |
+| Column        | Type       | Options                        |
+| -------       | ---------- | ------------------------------ |
+| zip           | string     | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| city          | string     | null: false                    |
+| address       | string     | null: false                    |
+| buildname     | string     |                                |
+| phonecall     | string     | null: false                    |
+| purchase_id   | integer    | null: false, foreign_key: true |
 
 ### Association
 
