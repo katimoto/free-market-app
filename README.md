@@ -25,21 +25,19 @@
 | Column     | Type     | Options                        |
 | --------   | ------   | ------------------------------ |
 | name       | string   | null: false                    |
-| category   | string   | null: false                    |
+| category   | integer  | null: false                    |
 | price      | integer  | null: false                    |
+| satatus    | integer  | null: false                    |
 | address    | integer  | null: false                    |
-| shipment   | datetime | null: false                    |
-| image      | text     | null: false                    |
+| shipment   | integer  | null: false                    |
 | text       | text     | null: false                    |
 | fee        | integer  | null: false                    |
 | user_id    | integer  | null: false, foreign_key: true |
-| address_id | integer  | null: false, foreign_key: true |
 
 ### Association
 
 - belongs to :user
-- belongs to :address
-- belongs to :purchase
+- has_one :purchase
 
 ## purchases テーブル
 
@@ -52,22 +50,22 @@
 
 - belongs_to :user
 - has_one :address
-- has_one :item
+- belongs_to :item
 
 ## addresses テーブル
 
-| Column     | Type       | Options                        |
-| -------    | ---------- | ------------------------------ |
-| zip        | string     |                                |
-| prefecture | integer    | null: false                    |
-| city       | string     | null: false                    |
-| address    | string     | null: false                    |
-| buildname  | string     |                                |
-| phonecall  | string     | null: false                    |
-| user_id    | integer    | null: false, foreign_key: true |
-| address_id | integer    | null: false, foreign_key: true |
+| Column      | Type       | Options                        |
+| -------     | ---------- | ------------------------------ |
+| zip         | string     |                                |
+| prefecture  | integer    | null: false                    |
+| city        | string     | null: false                    |
+| address     | string     | null: false                    |
+| buildname   | string     |                                |
+| phonecall   | string     | null: false                    |
+| item_id     | integer    | null: false, foreign_key: true |
+| purchase_id | integer    | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :user
-- belongs_to :purchase
+- belongs_to :item
+- has_one :purchase
