@@ -27,7 +27,7 @@
 | name       | string   | null: false                    |
 | category   | integer  | null: false                    |
 | price      | integer  | null: false                    |
-| satatus    | integer  | null: false                    |
+| status    | integer  | null: false                    |
 | address    | integer  | null: false                    |
 | shipment   | integer  | null: false                    |
 | text       | text     | null: false                    |
@@ -36,7 +36,7 @@
 
 ### Association
 
-- belongs to :user
+- belongs_to :user
 - has_one :purchase
 
 ## purchases テーブル
@@ -56,16 +56,14 @@
 
 | Column      | Type       | Options                        |
 | -------     | ---------- | ------------------------------ |
-| zip         | string     |                                |
+| zip         | string     | null: false                    |
 | prefecture  | integer    | null: false                    |
 | city        | string     | null: false                    |
 | address     | string     | null: false                    |
 | buildname   | string     |                                |
 | phonecall   | string     | null: false                    |
-| item_id     | integer    | null: false, foreign_key: true |
 | purchase_id | integer    | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :item
-- has_one :purchase
+- belongs_to :purchase
