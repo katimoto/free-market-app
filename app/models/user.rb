@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-    validates :birthday
+    validates :birthdate
     validates :email,    uniqueness: {case_sensitive: false},
                          format: {with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i}
     validates :password, length: {minimum: 6}
@@ -17,8 +17,8 @@ class User < ApplicationRecord
     end
        
     with_options format: {with: /\A[ァ-ヶー－]+\z/, message: '全角カナを使用してください'} do
-      validates :first_name_kana
-      validates :last_name_kana
+      validates :f_kana
+      validates :l_kana
     end
   end
 end

@@ -11,7 +11,7 @@
 | last_name  | string   | null: false |
 | f_kana     | string   | null: false |
 | l_kana     | string   | null: false |
-| birthday   | date     | null: false |
+| birthdate  | date     | null: false |
 
 
 
