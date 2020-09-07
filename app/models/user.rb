@@ -9,9 +9,12 @@ class User < ApplicationRecord
     validates :birthdate
     validates :email,    uniqueness: {case_sensitive: false},
                          format: {with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i}
-    validates :password, length: {minimum: 6}
+
+    with_options format: {with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i} do
+      validates :password, length: {minimum: 6}
+    end
        
-    with_options format: {with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/, message: '全角文字を使用してください'} do
+    with_options format: {with: /\A[ぁ-んァ-ン一-龥]+\z/, message: '全角文字を使用してください'} do
       validates :first_name
       validates :last_name
     end
