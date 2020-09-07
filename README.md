@@ -7,11 +7,11 @@
 | nickname   | string   | null: false |
 | email      | string   | null: false |
 | password   | string   | null: false |
-| birthday   | date     | null: false |
-| firstname  | string   | null: false |
-| lastname   | string   | null: false |
+| first_name | string   | null: false |
+| last_name  | string   | null: false |
 | f_kana     | string   | null: false |
 | l_kana     | string   | null: false |
+| birthdate  | date     | null: false |
 
 
 
