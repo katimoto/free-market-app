@@ -32,7 +32,6 @@
 | address_id   | integer  | null: false                    |
 | shipment_id  | integer  | null: false                    |
 | text         | text     | null: false                    |
-| fee          | integer  | null: false                    |
 | user_id      | integer  | null: false, foreign_key: true |
 
 ### Association
