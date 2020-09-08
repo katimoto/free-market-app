@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_tweet, only: [:edit, :show]
+  # before_action :set_tweet, only: [:edit, :show]
   before_action :move_to_index, except: [:index, :show]
 
   def index
@@ -19,24 +19,24 @@ class ItemsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-    item = Item.find(params[:id])
-    item.update(item_params)
-  end
+  # def update
+  #   item = Item.find(params[:id])
+  #   item.update(item_params)
+  # end
 
-  def destroy
-    item = Item.find(params[:id])
-    item.destroy
-    redirect_to root_path
-  end
+  # def destroy
+  #   item = Item.find(params[:id])
+  #   item.destroy
+  #   redirect_to root_path
+  # end
 
-  def show
-    @item = Item.new
-    #@items = @item.
-  end
+  # def show
+  #   @item = Item.new
+  #   #@items = @item.
+  # end
 
   private
 
@@ -48,7 +48,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :price, :category_id, :deliv_fee_id, :status_id, :address_id, :shipment_id, :text, :images).merge(user_id: current_user.id)
   end
 
-  def set_item
-    @item = Item.find(params[:id])
-  end
+  # def set_item
+  #   @item = Item.find(params[:id])
+  # end
 end
