@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :show]
+  before_action :set_item, only: [:edit, :show, :update]
   before_action :move_to_index, except: [:index, :show]
 
   def index
@@ -19,14 +19,13 @@ class ItemsController < ApplicationController
     end
   end
 
-
-  # def edit
-  # end
-
-  # def update
-  #   item = Item.find(params[:id])
-  #   item.update(item_params)
-  # end
+  def update
+    if @item.update(item_params)
+      redirect_to item_path
+    else
+      render :edit
+    end
+  end
 
   # def destroy
   #   item = Item.find(params[:id])
