@@ -2,7 +2,7 @@ require 'rails_helper'
 describe Item do
   before do
     @item = FactoryBot.build(:item)
-    @item.images = fixture_file_upload('public/images/Messi.png')
+    @item.image = fixture_file_upload('public/images/Messi.png')
   end
   describe '商品出品' do
     context '商品出品がうまくいくとき' do
@@ -18,7 +18,7 @@ describe Item do
         expect(@item.errors.full_messages).to include("Name can't be blank")
       end
       it "出品画像が空のとき" do
-        @item.images = nil
+        @item.image = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Images can't be blank")
       end

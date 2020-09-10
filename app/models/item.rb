@@ -9,10 +9,10 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipment
   belongs_to_active_hash :status
 
-  validates :name, :text, :price, :images, :address, :category, :deliv_fee, :shipment, :status, presence: true
+  validates :name, :text, :price, :image, :address, :category, :deliv_fee, :shipment, :status, presence: true
   validates :address_id, :category_id, :deliv_fee_id, :shipment_id, :status_id, numericality: { other_than: 1 }
   
-  has_one_attached :images
+  has_one_attached :image
   validates :price,
   numericality: {
     greater_than_or_equal_to: 300,
