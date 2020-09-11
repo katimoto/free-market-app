@@ -7,7 +7,7 @@ class CreateBuyers < ActiveRecord::Migration[6.0]
       t.string   :address,          null: false
       t.string   :buildname
       t.string   :phonecall,        null: false
-      t.integer  :purchase_id,      null: false, foreign_key: true
+      t.integer  :order_id,      null: false, foreign_key: true
 
       t.timestamps
     end

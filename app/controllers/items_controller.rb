@@ -35,7 +35,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
   private
 
   def move_to_index
