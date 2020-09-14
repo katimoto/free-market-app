@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :move_to_index
   before_action :set_action
+  before_action :move_to_index
 
   def index
     @order = CardBuyer.new
@@ -19,7 +19,10 @@ class OrdersController < ApplicationController
 
   private
   def move_to_index
-    redirect_to root_path unless user_signed_in?
+    binding.pry
+    if !user_signed_in? || current_user.id == @item.user_id
+      redirect_to root_path 
+    end
   end
 
   def set_action
