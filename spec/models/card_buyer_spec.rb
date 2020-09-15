@@ -28,6 +28,11 @@ RSpec.describe CardBuyer, type: :model do
       @card_buyer.valid?
       expect(@card_buyer.errors.full_messages).to include("Address can't be blank")
     end
+    it 'address_idが---だと保存できないこと' do
+      @card_buyer.address_id = 1
+      @card_buyer.valid?
+      expect(@card_buyer.errors.full_messages).to include("Address must be other than 1")
+    end
     it 'cityが空だと保存できないこと' do
       @card_buyer.city = nil
       @card_buyer.valid?
