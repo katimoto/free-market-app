@@ -4,11 +4,12 @@
           <%= image_tag items.image, class: "item-img" %>
 
           <%# 商品が売れていればsold outを表示しましょう %>
+          <% if items.order %>
           <div class='sold-out'>
             <span>Sold Out!!</span>
           </div>
+          <% end %>
           <%# //商品が売れていればsold outを表示しましょう %>
-
         </div>
         <div class='item-info'>
           <h3 class='item-name'>
