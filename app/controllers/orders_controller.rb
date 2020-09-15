@@ -19,7 +19,6 @@ class OrdersController < ApplicationController
 
   private
   def move_to_index
-    binding.pry
     if !user_signed_in? || current_user.id == @item.user_id
       redirect_to root_path 
     end

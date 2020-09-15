@@ -6,7 +6,7 @@ class CardBuyer
   with_options presence: true do
     validates :city, :address
     validates :zip, format: {with: /\A[0-9]{3}-[0-9]{4}\z/}
-    validates :phonecall, format: {with: /\A[0-9]+\z/}
+    validates :phonecall, format: {with: /\A\d{10,11}\z/}
     validates :address_id, numericality: { other_than: 1}
   end
 
