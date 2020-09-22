@@ -4,7 +4,7 @@ class CardBuyer
   attr_accessor :user_id, :item_id, :zip, :address_id, :city, :address, :buildname, :phonecall, :order_id, :token
 
   with_options presence: true do
-    validates :city, :address
+    validates :city, :address, :token
     validates :zip, format: {with: /\A[0-9]{3}-[0-9]{4}\z/}
     validates :phonecall, format: {with: /\A\d{10,11}\z/}
     validates :address_id, numericality: { other_than: 1}
